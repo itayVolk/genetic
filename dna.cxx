@@ -1,5 +1,7 @@
 /*
- * Sin-Yaw Wang <swang24@scu.edu>
+ * Abhinav Ala <aala@scu.edu>
+ * Isaac Amedie <iamedie@scu.edu>
+ * Itay Volk <ivolk@scu.edu>
  */
 #include <bitset>
 #include "rng.h"
