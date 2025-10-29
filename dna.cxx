@@ -3,9 +3,10 @@
  * Isaac Amedie <iamedie@scu.edu>
  * Itay Volk <ivolk@scu.edu>
  */
-#include <bitset>
 #include "rng.h"
 #include "dna.h"
+#include <ostream>
+#include <bitset>
 
 namespace csen79 {
 

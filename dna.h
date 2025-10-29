@@ -5,8 +5,6 @@
  */
 #ifndef DNA_H
 #define DNA_H
-#include <ostream>
-#include <bitset>
 
 namespace csen79 {
 class DNA {
