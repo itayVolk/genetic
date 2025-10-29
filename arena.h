@@ -1,5 +1,7 @@
 /*
- * Sin-Yaw Wang <swang24@scu.edu>
+ * Abhinav Ala <aala@scu.edu>
+ * Isaac Amedie <iamedie@scu.edu>
+ * Itay Volk <ivolk@scu.edu>
  */
 #ifndef ARENA_H
 #define ARENA_H
@@ -34,6 +36,7 @@ public:
             total += individual.getScore();
         return static_cast<double>(total) / NPop;
     }
+    friend std::ostream& operator <<(std::ostream& outs, const Arena& source);
 };
 
 }   // namespace csen79

@@ -17,6 +17,7 @@ public:
     long getScore() const { return score; }
     const int getGeneration() const { return generation; }
     const unsigned int dnaMatch(int c, const DNA& other) const;
+    friend std::ostream& operator <<(std::ostream& outs, const Life& source);
 private:
     DNA dna[NChromo];
     int generation{0};

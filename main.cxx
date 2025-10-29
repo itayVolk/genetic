@@ -39,7 +39,10 @@ int main() {
             ", Maturity: " << maturity << std::endl;
         tribe.evolve();
     } while (maturity <= Arena::MATURITY);
-    // There needs a way to display the end population.
+    std::cout << "Generation: " << std::setw(3) << tribe.highGeneration() << 
+            ", Average score: " << std::setw(8) << std::fixed << std::setprecision(4) << avgScore << 
+            ", Maturity: " << maturity <<
+            ", Population: " << tribe << std::endl;
     return 0;
 }
 

@@ -12,6 +12,7 @@
 #include "life.h"
 #include "select.h"
 #include "arena.h"
+#include <iostream>
 
 namespace csen79 {
 
@@ -66,6 +67,13 @@ double Arena::matured() {
          matches += competition.matchRatio(individual);
     matches /= NPop;
     return matches;
+}
+
+std::ostream &operator<<(std::ostream &outs, const Arena &source) {
+    for (auto life : source.population) {
+        outs << life << std::endl;
+    }
+    return outs;
 }
 
 }   // namespace csen79

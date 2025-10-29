@@ -5,6 +5,7 @@
  */
 #include <bitset>
 #include <stdexcept>
+#include <ostream>
 #include "rng.h"
 #include "dna.h"
 #include "life.h"
@@ -30,9 +31,20 @@ Life Life::cross(const Life& other) const {
         if (!child.dna[i].count()) {
             child.dna[i] = other.dna[i];
         }
+        int index = rand_int(0, child.dna[i].size()-1);
+        child.dna[i].setCode(index, !child.dna[i].getCode(index));
     }
     return child;
 }
 const unsigned int Life::dnaMatch(int c, const DNA& other) const {return dna[c].matchDNA(other);}
+
+std::ostream &operator<<(std::ostream &outs, const Life &source) {
+    outs << "{";
+    for (auto dna : source.dna) {
+        outs << dna << ", ";
+    }
+    outs << "}";
+    return outs;
+}
 
 }   // namespace csen79

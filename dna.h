@@ -5,6 +5,7 @@
  */
 #ifndef DNA_H
 #define DNA_H
+#include <ostream>
 
 namespace csen79 {
 class DNA {
@@ -19,6 +20,7 @@ public:
     size_t size() const;    // length
     size_t count() const;   // count of 1s
     unsigned int matchDNA(const DNA& other) const;  // how many bits that match with the other
+    friend std::ostream& operator <<(std::ostream& outs, const DNA& source) {return outs << source.codes;};
 private:
     Gene codes;
 };
