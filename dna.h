@@ -5,13 +5,15 @@
  */
 #ifndef DNA_H
 #define DNA_H
+#include <iostream>
+#include <bitset>
 
 namespace csen79 {
 class DNA {
     static constexpr int nCode = 16;
     static constexpr unsigned int mask = (1UL << nCode) - 1;
 public:
-    using Gene = unsigned short;    // are you in agreement with this choice?
+    using Gene = std::bitset<nCode>;    // are you in agreement with this choice?
     DNA(): DNA(rand_int(0, mask)) {}    // default is to have random DNA codes
     DNA(unsigned int v);
     bool getCode(const int i) const;
@@ -19,7 +21,7 @@ public:
     size_t size() const;    // length
     size_t count() const;   // count of 1s
     unsigned int matchDNA(const DNA& other) const;  // how many bits that match with the other
-    friend std::ostream& operator <<(std::ostream& outs, const DNA& source) {return outs << std::bitset<nCode>(source.codes);};
+    friend std::ostream& operator <<(std::ostream& outs, const DNA& source) {return outs << source.codes;};
 private:
     Gene codes;
 };

@@ -5,8 +5,6 @@
  */
 #include "rng.h"
 #include "dna.h"
-#include <ostream>
-#include <bitset>
 
 namespace csen79 {
 
