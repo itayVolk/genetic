@@ -17,18 +17,19 @@ namespace csen79 {
 Life Life::cross(const Life& other) const {
     Life child;
     child.generation = std::max(generation, other.generation)+1;
+    DNA blank(0);
     for (int i = 0; i < NChromo; i++) {
-        child.dna[i] = DNA(0);
+        child.dna[i] = blank;
     }
     for (int i = 0; i < NChromo/2; i++) {
         int index;
         do {
             index = rand_int(0, NChromo-1);
-        } while (child.dna[index].count());
+        } while (child.dna[index].matchDNA(blank) != child.dna[index].size());
         child.dna[index] = dna[index];
     }
     for (int i = 0; i < NChromo; i++) {
-        if (!child.dna[i].count()) {
+        if (child.dna[i].matchDNA(blank) != child.dna[i].size()) {
             child.dna[i] = other.dna[i];
         }
         int index = rand_int(0, child.dna[i].size()-1);
