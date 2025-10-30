@@ -1,6 +1,5 @@
 /*
  * Abhinav Ala <aala@scu.edu>
- * Isaac Amedie <iamedie@scu.edu>
  * Itay Volk <ivolk@scu.edu>
  */
 #include <bitset>
@@ -41,10 +40,10 @@ const unsigned int Life::dnaMatch(int c, const DNA& other) const {return dna[c].
 
 std::ostream &operator<<(std::ostream &outs, const Life &source) {
     outs << "{";
-    for (auto dna : source.dna) {
-        outs << dna << ", ";
+    for (int i = 0; i < Life::NChromo-1; i++) {
+        outs << source.dna[i] << ", ";
     }
-    outs << "}";
+    outs << source.dna[Life::NChromo-1] << "}";
     return outs;
 }
 

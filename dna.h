@@ -1,6 +1,5 @@
 /*
  * Abhinav Ala <aala@scu.edu>
- * Isaac Amedie <iamedie@scu.edu>
  * Itay Volk <ivolk@scu.edu>
  */
 #ifndef DNA_H

@@ -1,6 +1,5 @@
 /*
  * Abhinav Ala <aala@scu.edu>
- * Isaac Amedie <iamedie@scu.edu>
  * Itay Volk <ivolk@scu.edu>
  */
 #include "rng.h"
@@ -11,7 +10,7 @@ namespace csen79 {
 // Student to implement all of these member functions
 DNA::DNA(unsigned int v) {
     // Initialize the bitset with the lower bits of v
-    codes = static_cast<Gene>(v & mask);
+    codes = Gene(v);
 }
 
 bool DNA::getCode(const int i) const {

@@ -1,6 +1,5 @@
 /*
  * Abhinav Ala <aala@scu.edu>
- * Isaac Amedie <iamedie@scu.edu>
  * Itay Volk <ivolk@scu.edu>
  */
 #ifndef ARENA_H
@@ -9,7 +8,7 @@
 namespace csen79 {
 
 class Arena {
-    static constexpr int NPop{1000};    // Arbitrary
+    static constexpr int NPop{100};    // Arbitrary
     static constexpr int EVENTPERROUND{10};// Arbitrary
     std::vector<Life> population;
     Select competition;

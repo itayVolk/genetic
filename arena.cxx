@@ -1,6 +1,5 @@
 /*
  * Abhinav Ala <aala@scu.edu>
- * Isaac Amedie <iamedie@scu.edu>
  * Itay Volk <ivolk@scu.edu>
  */
 #include <bitset>
@@ -63,10 +62,13 @@ void Arena::evolve() {
 
 double Arena::matured() {
    double matches{0.0};
-   for (auto& individual : population)
-         matches += competition.matchRatio(individual);
-    matches /= NPop;
-    return matches;
+   for (auto& individual : population) {
+        double temp = competition.matchRatio(individual);
+        if (!matches || temp < matches) {
+            matches = temp;
+        }
+   }
+    return matches/Life::NChromo;
 }
 
 std::ostream &operator<<(std::ostream &outs, const Arena &source) {
